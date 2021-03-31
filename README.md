@@ -2,7 +2,10 @@
 
 An example of how to bind views / view controllers and view models using Combine and UIKit in a fully reactive way. (If you wish to run this demo, you will need to create a developer account at [Unsplash][1] and add your client ID in Requests.swift).
 
+Checkout the full post on [tapdev][2]
+
 [1]: https://unsplash.com/documentation#creating-a-developer-account
+[2]: https://tapdev.co/2021/03/31/a-better-way-to-structure-combine-with-uikit-in-mvvm/
 
 ![Screenshot](https://user-images.githubusercontent.com/47152208/113141660-e0eaea80-9221-11eb-8d0f-1c8d5c9a4a7c.png)
 

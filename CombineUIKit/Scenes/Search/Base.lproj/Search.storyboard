@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="CombineUIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rnn-Js-cna">
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="ER2-Hz-QcQ">
+                                        <rect key="frame" x="197" y="10" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BOx-uw-wMs"/>
+                                    <constraint firstItem="ER2-Hz-QcQ" firstAttribute="centerX" secondItem="Rnn-Js-cna" secondAttribute="centerX" id="MX3-ge-wjD"/>
+                                    <constraint firstItem="ER2-Hz-QcQ" firstAttribute="centerY" secondItem="Rnn-Js-cna" secondAttribute="centerY" id="oyR-xk-2L6"/>
+                                </constraints>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="irL-Uq-w1r">
+                                <rect key="frame" x="0.0" y="84" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Q3h-aR-HZD">
+                                <rect key="frame" x="0.0" y="140" width="414" height="756"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h5z-hD-uRb" customClass="CustomGridLayout" customModule="CombineUIKit" customModuleProvider="target">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="SPX-95-qfb" customClass="PhotoCell" customModule="CombineUIKit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tIu-um-Jzq">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ych-DK-Xi8">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ych-DK-Xi8" firstAttribute="leading" secondItem="tIu-um-Jzq" secondAttribute="leading" id="P2k-Fj-bqN"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ych-DK-Xi8" secondAttribute="trailing" id="XFi-YT-uLb"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ych-DK-Xi8" secondAttribute="bottom" id="cjr-UT-bcj"/>
+                                                <constraint firstItem="Ych-DK-Xi8" firstAttribute="top" secondItem="tIu-um-Jzq" secondAttribute="top" id="xOa-Nb-ju2"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageView" destination="Ych-DK-Xi8" id="MZM-Fl-lt1"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q3h-aR-HZD" firstAttribute="top" secondItem="irL-Uq-w1r" secondAttribute="bottom" id="5gi-Qd-B2o"/>
+                            <constraint firstItem="irL-Uq-w1r" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="95S-Va-tPk"/>
+                            <constraint firstAttribute="bottom" secondItem="Q3h-aR-HZD" secondAttribute="bottom" id="DRI-bX-m8T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q3h-aR-HZD" secondAttribute="trailing" id="F76-j7-fYV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rnn-Js-cna" secondAttribute="trailing" id="FJR-xD-M15"/>
+                            <constraint firstItem="Q3h-aR-HZD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GWe-nN-tyH"/>
+                            <constraint firstItem="irL-Uq-w1r" firstAttribute="top" secondItem="Rnn-Js-cna" secondAttribute="bottom" id="UPs-bh-n2u"/>
+                            <constraint firstItem="Rnn-Js-cna" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X0r-g9-vez"/>
+                            <constraint firstItem="Rnn-Js-cna" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bNG-qX-GYW"/>
+                            <constraint firstItem="Rnn-Js-cna" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hwE-6a-toI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rnn-Js-cna" secondAttribute="trailing" id="oOJ-hG-Dz1"/>
+                            <constraint firstItem="irL-Uq-w1r" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qtl-hq-Rt4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityView" destination="ER2-Hz-QcQ" id="Ok5-Uv-qik"/>
+                        <outlet property="collectionView" destination="Q3h-aR-HZD" id="7R7-Hw-5Ea"/>
+                        <outlet property="searchBar" destination="irL-Uq-w1r" id="7vH-ZP-98U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

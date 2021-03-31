@@ -41,7 +41,8 @@ extension URLRequest {
     static func unsplash(url: URL) -> URLRequest {
         var request = URLRequest(url: url)
         request.setValue("v1", forHTTPHeaderField: "Accept-Version")
-        request.setValue("Client-ID iZtw8MF31vX7HRImIxwViLf8LnOBeESxKvNfbihdGHs", forHTTPHeaderField: "Authorization")
+        fatalError("create your own unsplash api key -> https://unsplash.com/documentation#creating-a-developer-account")
+        request.setValue("[ add your unsplash api key here ]", forHTTPHeaderField: "Authorization")
         return request
     }
     
